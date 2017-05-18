@@ -1,4 +1,9 @@
 <h1>Products</h1>
+<p>
+  Download:
+  <%= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
 
 <table id="products">
   <tr>
@@ -6,11 +11,11 @@
     <th>Release Date</th>
     <th>Price</th>
   </tr>
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.released_on.strftime("%B %e, %Y") %></td>
-    <td><%= number_to_currency(product.price) %></td>
-  </tr>
-<% end %>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.released_on.strftime("%B %e, %Y") %></td>
+      <td><%= number_to_currency(product.price) %></td>
+    </tr>
+  <% end %>
 </table>
