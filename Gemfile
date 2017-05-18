@@ -1,10 +1,6 @@
 source "https://rubygems.org"
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 5.1.0"
@@ -62,9 +58,9 @@ end
 
 group :development, :test do
   gem "rspec-rails"
-  gem "debugger2", git: "git://github.com/ko1/debugger2.git"
   gem "factory_girl_rails"
   gem "ffaker"
+  gem "pry"
 end
 
 group :production do
@@ -77,3 +73,5 @@ group :development do
 end
 
 gem "roo"
+gem "dotenv-rails"
+gem "faker"
