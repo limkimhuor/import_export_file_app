@@ -1,0 +1,15 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  header_cell = style.add_style(bg_color: "B6B6B6", border: Axlsx::STYLE_THIN_BORDER)
+  highlight_cell = style.add_style(bg_color: "EFC376", border: Axlsx::STYLE_THIN_BORDER,
+    alignment: { horizontal: :center })
+
+  wb.add_worksheet(name: "Products") do |sheet|
+    sheet.add_row @products.column_names.first(4), style: header_cell
+    @products.each do |product|
+      sheet.add_row [product.id, product.name, product.released_on, product.price], style: highlight_cell
+    end
+  end
+end
+
