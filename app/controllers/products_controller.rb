@@ -7,9 +7,4 @@ class ProductsController < ApplicationController
       format.xls
     end
   end
-
-  def import
-    Product.import params[:file]
-    redirect_to root_url, notice: "Product imported"
-  end
 end

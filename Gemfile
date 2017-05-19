@@ -72,6 +72,7 @@ group :development do
   gem "binding_of_caller"
 end
 
-gem "roo"
+gem "roo", "~> 2.7.0"
 gem "dotenv-rails"
 gem "faker"
+gem "roo-xls", github: "roo-rb/roo-xls"
