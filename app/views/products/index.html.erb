@@ -1,5 +1,9 @@
 <h1>Products</h1>
 
+<% %w(xlsx xls csv).each do |ext| %>
+  <%= link_to "Download as .#{ext.to_s}", products_path(format: ext.to_sym), data: {turbolinks: false} %>
+<% end %>
+
 <table id="products">
   <tr>
     <th>Product Name</th>
