@@ -1,0 +1,16 @@
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>released_on</th>
+    <th>price</th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td>product.id</td>
+      <td><%= product.name %></td>
+      <td><%= product.released_on %></td>
+      <td><%= product.price %></td>
+    </tr>
+  <% end %>
+</table>
